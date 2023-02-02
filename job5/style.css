@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #aaa;
+}
+#tabs .tab-title{
+    margin-bottom: 3px;
+}
+#tabs .tab-title li{
+    display: inline-block;
+    background-color: #787777;
+    padding: 3px 6px;
+    transition: all 0.3s ease-in-out;
+}
+#tabs .tab-title li.active, #tabs .tab-title li:hover{
+    background-color: #414141;
+    color: white;
+}
+#tabs > div{
+    display: none;
+}
+#tabs > div.active{
+    display: block;
+    box-shadow: 0 0 2px #787777;
+    padding: 3px 6px;
+    background-color: white;
+}
