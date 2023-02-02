@@ -17,7 +17,9 @@ const validEmail = function(inputEmail) {
     // L'Affichage de la validation de l'email
     if(testEmail){
         small.innerHTML = 'Adresse Email Valide';
+        small.style.color = 'green';
     } else{
         small.innerHTML = 'Adresse Email Pas Valide (Carectère Valide: A-Z 0-9 _.-)';
+        small.style.color = 'red';
     }
 };
