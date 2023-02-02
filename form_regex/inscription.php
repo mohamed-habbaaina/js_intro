@@ -30,9 +30,10 @@ session_start();
                 
                 <label for="repass">Confermer Votre Password</label>
                 <input type="password" name="repass" id="repass" placeholder="Confermer Votre Password">
+                <small></small>
             </div>
             <div>
-                <button type="submit" id="btn-register">Valider</button>
+                <button type="submit">Valider</button>
             </div>
 
         </form>
