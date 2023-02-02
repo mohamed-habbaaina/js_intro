@@ -13,6 +13,20 @@ form.password.addEventListener('change', function(){
     validPassword(this);
 })
 
+// Ecouter change confirmation Password
+form.repass.addEventListener('change', function(){
+    validRePass(this);
+})
+
+//  ecouter la soumission du formulaire
+form.addEventListener('submit', function(e){
+    e.preventDefault(); // empéché submit le formulaire
+
+    // Verifier que l'Email & Password est valide pour submit formulaire
+    if(validEmail(form.email) && validPassword(form.password) && validRePass(form.repass)){
+        form.submit();
+    }
+});
 
 // ********* Validation Email *********
 const validEmail = function(inputEmail) {
@@ -75,8 +89,28 @@ const validPassword = function(inputPassword){
     if(valid){
         smallPass.innerHTML = 'Password Valide';
         smallPass.style.color = 'green';
+        return true;
     } else{
         smallPass.innerHTML = msg;
         smallPass.style.color = 'red';
+        return false;
     }    
+}
+
+// ********* Validation Confermation Password *********
+
+const validRePass = function(inputRePass){
+
+    // L'Affichage de la validation de Confermation Password.
+    let smallRePass = inputRePass.nextElementSibling;
+
+    if(inputRePass.value == form.password.value){
+        smallRePass.innerHTML = 'Confermation Password Valide';
+        smallRePass.style.color = 'green';
+        return true;
+    } else{
+        smallRePass.innerHTML = 'Entrer le meme Password !';
+        smallRePass.style.color = 'red';
+        return false;
+    }  
 }
