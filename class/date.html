@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'oject Date</title>
+</head>
+<body>
+    <script>
+        /**
+         * ! importan
+         * 
+         *function qui gére les intervales 
+         */
+
+        
+        const YEARS = 0;
+         const MONTHS = 1;
+         const DAYS = 2;
+         const HOURS = 3;
+         const MINUTES = 4;
+         const SECONDS = 5;
+         function addinterval(date, interval){
+            const parts = [
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate(),
+                date.getHours(),
+                date.getMinutes(),
+                date.getSeconds(),
+                date.getMilliseconds()
+            ]
+
+            for (const [unit, value] of Object.entries(interval)){
+                parts[unit] += value;
+            }
+            return new Date(...parts)
+         }
+
+         const date = new Date('june 6, 1984 05:10:00');
+
+         const futur = addinterval(date, {
+             [YEARS]: 40,
+             [MONTHS]: 6,
+             [DAYS]: 13,
+             [HOURS]: 1
+         })
+
+         console.log(date);
+         console.log(futur);
+
+    </script>
+</body>
+</html>
